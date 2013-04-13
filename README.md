@@ -65,3 +65,31 @@ body = encode(env)
 Yes, the protocol full of 2-letter key names. And the keys are different when
 talking to the merchant's server (as opposed to the central server).
 
+## Crypto
+
+For every request there's generated a new **secret key** (32 bytes). This
+secret key is never directly used, but derivations are created using
+HMAC-SHA256.
+
+Given `HMAC_SHA256(key, message)`, the derived keys can be computed as:
+
+```
+request_encryption_key =       HMAC_SHA256(secret_key, 'requestEncryptionKey')
+request_iv = first 16 bytes of HMAC_SHA256(secret_key, 'requestInitVector')
+request_auth_key =             HMAC_SHA256(secret_key, 'requestAuthenticationKey')
+
+response_encryption_key =       HMAC_SHA256(secret_key, 'responseEncryptionKey')
+response_iv = first 16 bytes of HMAC_SHA256(secret_key, 'responseInitVector')
+response_auth_key =             HMAC_SHA256(secret_key, 'responseAuthenticationKey')
+```
+
+### Secret key encryption
+
+The secret key is encrypted using the server's public key (RSA).
+
+### Data encryption
+
+General data is encrypted using AES-256-CBC. See the derived keys above for the
+key and initialization vector.
+
+
