@@ -120,11 +120,11 @@ signature = HMAC_SHA1(request_auth_key, data)
 The URL for the central server can be found as `serverURL` in the *parameters*.
 At the moment it seems to always be `https://activation1.bankid.no/CentralServerFE/Gateway`.
 
-Requests are POSTed to this URL using the follow envelope.
+Requests are POSTed to this URL using the following envelope.
 
 ### Envelope
 
-Encoding: form-data
+Encoding: form-data.
 
 <table>
   <tr>
