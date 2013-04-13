@@ -99,4 +99,19 @@ it seems that it uses `keys/5a.pub`.
 General data is encrypted using AES-256-CBC. See the derived keys above for the
 key and initialization vector.
 
+### Signatures
+
+Although BankID uses HMAC-SHA256 for key derivation, it uses HMAC-SHA1 for
+signing data. Yes, you heard that right: When it wants to sign something it
+derives the signing/authentication key from the secret key using HMAC-SHA256,
+then it uses that to sign the data using HMAC-SHA1.
+
+Let me repeat it in code:
+
+```
+# As seen above:
+request_auth_key = HMAC_SHA256(secret_key, 'requestAuthenticationKey')
+# Signing
+signature = HMAC_SHA1(request_auth_key, data)
+```
 
