@@ -83,9 +83,16 @@ response_iv = first 16 bytes of HMAC_SHA256(secret_key, 'responseInitVector')
 response_auth_key =             HMAC_SHA256(secret_key, 'responseAuthenticationKey')
 ```
 
+### Public keys
+
+The Java applet includes five pairs of keys (included in this repo as
+`keys/1a.pub` to `keys/5b.pub`). I haven't quite figured out what the different
+keys mean.
+
 ### Secret key encryption
 
-The secret key is encrypted using the server's public key (RSA).
+The secret key is encrypted using the server's public key (RSA). At the moment
+it seems that it uses `keys/5a.pub`.
 
 ### Data encryption
 
