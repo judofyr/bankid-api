@@ -126,47 +126,13 @@ Requests are POSTed to this URL using the following envelope.
 
 Encoding: form-data.
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Example</th>
-  </tr>
-  <tr>
-    <td>bu</td>
-    <td>Constant</td>
-    <td>`3.7`</td>
-  </tr>
-  <tr>
-    <td>bt</td>
-    <td>`tid` in *parameters*</td>
-    <td>`qG7GN5MYA/D4NjzNrvy1KoBgxfA=`</td>
-  </tr>
-  <tr>
-    <td>tf</td>
-    <td>Constant</td>
-    <td>`5.3.2`</td>
-  </tr>
-  <tr>
-    <td>ao</td>
-    <td>Constant</td>
-    <td>`java`</td>
-  </tr>
-  <tr>
-    <td>edo</td>
-    <td>Encrypted data (base64)</td>
-    <td>...</td>
-  </tr>
-  <tr>
-    <td>eko</td>
-    <td>Encrypted key (base64)</td>
-    <td>...</td>
-  </tr>
-  <tr>
-    <td>eao</td>
-    <td>Signature of `encrypted_data + encrypted_key` (base64)</td>
-    <td>...</td>
-  </tr>
-</table>
-
+| Name | Description                                            | Example                        |
+| ---  | ---                                                    | ---                            |
+| bu   | Constant                                               | `3.7`                          |
+| bt   | `tid` in *parameters*                                  | `qG7GN5MYA/D4NjzNrvy1KoBgxfA=` |
+| tf   | Constant                                               | `5.3.2`                        |
+| ao   | Constant                                               | `java`                         |
+| edo  | Encrypted data (base64)                                | ...                            |
+| eko  | Encrypted key (base64)                                 | ...                            |
+| eao  | Signature of `encrypted_data + encrypted_key` (base64) | ...                            |
 
