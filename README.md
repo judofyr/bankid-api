@@ -262,6 +262,30 @@ Response:
 | dk   | Merchant title                           | `Postbanken - en del av DnB NOR Bank ASA` |
 | dp   | EndUserCertificate (X509, base64)        |                                           |
 
+### Sign
+
+Request:
+
+| Name | Description                           | Example          |
+| ---  | ---                                   | ---              |
+| xx   | Constant                              | `3.7`            |
+| tf   | Constant                              | `5.3.2`          |
+| ao   | Constant                              | `java`           |
+| bh   | Constant                              | `Sign`           |
+| ij   | Metadata                              |                  |
+| bl   | `AUTHENTICATION` or `SIGNING`         | `AUTHENTICATION` |
+| bp   | SHA-1 of `serverChallenge` (base64)   |                  |
+| na   | SHA-256 of `serverChallenge` (base64) |                  |
+| bw   | SHA-1 of `clientChallenge` (base64)   |                  |
+| ni   | SHA-256 of `clientChallenge` (base64) |                  |
+| bk   | `pkcs7` from initAuth                 |                  |
+| bv   | `bssChannel` from initAuth            |                  |
+| bx   | `bssChannelSignature` from initAuth   |                  |
+| bj   | `bj`  from OTPAuthenticate            |                  |
+| ba   | `ba` from OTPAuthenticate             |                  |
+| ay   | `ay` from OTPAuthenticate             |                  |
+| ak   | SHA-1 of `password + userID`          |                  |
+
 ## Merchant communication
 
 The URL for the merchant server can be found as `URL` in the *parameters*. You
