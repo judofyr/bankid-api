@@ -124,8 +124,6 @@ Requests are POSTed to this URL using the following envelope.
 
 ### Envelope
 
-Encoding: form-data.
-
 Request:
 
 | Name | Description                                            | Example                        |
@@ -147,8 +145,6 @@ Response:
 | eao       | Signature of `encrypted_data` (base64) | ...     |
 
 ### GetMerchantKey
-
-Encoding: form-data.
 
 Request:
 
@@ -229,8 +225,6 @@ Requests are POSTed to this URL using the following envelope.
 
 ### Envelope
 
-Encoding: form-data.
-
 Request:
 
 | Name      | Description                                          | Example    |
@@ -251,8 +245,6 @@ Response:
 | encAuth | Signature of `encData` (base64)  | ...     |
 
 ### initAuth
-
-Encoding: form-data.
 
 Request:
 
