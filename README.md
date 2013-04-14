@@ -146,4 +146,36 @@ Response:
 | edo       | Encrypted response data (base64)       | ...     |
 | eao       | Signature of `encrypted_data` (base64) | ...     |
 
+### GetMerchantKey
+
+Encoding: form-data.
+
+Request:
+
+| Name | Description                 | Example                   |
+| ---  | ---                         | ---                       |
+| xx   | Constant                    | `3.7`                     |
+| tf   | Constant                    | `5.3.2`                   |
+| ao   | Constant                    | `java`                    |
+| bh   | Constant                    | `GetMerchantKey`          |
+| ij   | Metadata? Can be left empty | ``                        |
+| dg   | Parameter signature         | `aW10hQ5GQhS9NwHjE` ...   |
+| df   | Parameters (form-data)      | `type=application%2F` ... |
+
+The parameter signature (dg) is available as `popSignature` in
+the *parameters*. `popParameters` contains a comma-separated,
+base64-encoded, list of parameter keys. You must create a form-data
+string containing these parameters (df).
+
+Response:
+
+| Name | Description                        | Example       |
+| ---  | ---                                | ---           |
+| bn   | Error code. `0` = success          | `0`           |
+| dj   | Your IP-address                    | `80.80.80.80` |
+| re   | Some sort of regexp blacklist      |               |
+| ab   | Some sort of JavaScript? blacklist |               |
+| dm   | X509-encoded certificate (base64)  |               |
+
+The certificate contains the public key to the merhcant's server.
 
