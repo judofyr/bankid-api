@@ -319,13 +319,13 @@ Response:
 
 Request:
 
-| Name            | Description                   | Example                        |
-| ---             | ---                           | ---                            |
-| operation       | Name of the operation         | `initAuth`                     |
-| clientChallenge | 20 random bytes (base64)      | `hvvsjVgvo6ULUSW3ic2DDBPZ0uk=` |
-| carrier         | `carrier` from the parameters | `NC`                           |
-| tokenType       | `token` from the parameters   | `roaming`                      |
-| clientIp        | IP address of the client      | `80.80.80.80`                  |
+| Name            | Description                 | Example                        |
+| ---             | ---                         | ---                            |
+| operation       | Name of the operation       | `initAuth`                     |
+| clientChallenge | 20 random bytes (base64)    | `hvvsjVgvo6ULUSW3ic2DDBPZ0uk=` |
+| carrier         | Constant                    | `NC`                           |
+| tokenType       | `token` from the parameters | `roaming`                      |
+| clientIp        | IP address of the client    | `80.80.80.80`                  |
 
 Response:
 
