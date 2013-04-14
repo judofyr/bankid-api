@@ -238,6 +238,30 @@ Request:
 Hardware data: `de` contains the MAC-address. `dd` is a unique identifier that
 is persisted on your computer.
 
+Response:
+
+| Name  | Description               | Example |
+| ---   | ---                       | ---     |
+| bn    | Error code. `0` = success | `0`     |
+| ba    | Data                      |         |
+| bj    | Signature                 |         |
+| as    | Size of list              | `1`     |
+| ad1 - | Form-data encoded list    |         |
+
+`ad` contains elements with the follow structure:
+
+| Name | Description                              | Example                                   |
+| ---  | ---                                      | ---                                       |
+| ac   | BankID friendly name                     | `Postbanken-BankID`                       |
+| ay   | OrderIDRandom                            | `PCemJPUZXFMAHLYPkXorst9MBcg=`            |
+| ai   | Force USP Change flag (`N` or `Y`)       | `N`                                       |
+| at   | Force USP Change Renew flag (`N` or `Y`) | `N`                                       |
+| ap   | Timestamp                                | `20130409185726`                          |
+| am   | Timestamp                                | `20101015160936`                          |
+| dl   | Merchant name                            | `DNB Bank`                                |
+| dk   | Merchant title                           | `Postbanken - en del av DnB NOR Bank ASA` |
+| dp   | EndUserCertificate (X509, base64)        |                                           |
+
 ## Merchant communication
 
 The URL for the merchant server can be found as `URL` in the *parameters*. You
