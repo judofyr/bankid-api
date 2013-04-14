@@ -215,6 +215,26 @@ OTP service:
 | bc   | Unknown        | `0`                   |
 | bs   | `PER` or `EMP` | `PER`                 |
 
+### OTPAuthenticate
+
+Request:
+
+| Name | Description                          | Example               |
+| ---  | ---                                  | ---                   |
+| xx   | Constant                             | `3.7`                 |
+| tf   | Constant                             | `5.3.2`               |
+| ao   | Constant                             | `java`                |
+| bh   | Constant                             | `OTPAuthenticate`     |
+| cg   | `PER` or `EMP`                       | `PER`                 |
+| bl   | Type (`AUTHENTICATION` or `SIGNING`) | `AUTHENTICATION`      |
+| aq   | Locale                               | `nb`                  |
+| bf   | One-time password                    | `123456`              |
+| bd   | OTP name                             | `Postbanken Digipass` |
+| by   | Signature of some kind (base64)      |                       |
+| ij   | Metadata                             |                       |
+| dc   | Unknown                              | `dd=...&de=...`       |
+| bq   | User ID (SSN)                        |                       |
+
 ## Merchant communication
 
 The URL for the merchant server can be found as `URL` in the *parameters*. You
