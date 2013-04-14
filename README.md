@@ -129,9 +129,9 @@ Encoding: form-data.
 | Name | Description                                            | Example                        |
 | ---  | ---                                                    | ---                            |
 | bu   | Constant                                               | `3.7`                          |
-| bt   | `tid` in *parameters*                                  | `qG7GN5MYA/D4NjzNrvy1KoBgxfA=` |
 | tf   | Constant                                               | `5.3.2`                        |
 | ao   | Constant                                               | `java`                         |
+| bt   | `tid` in *parameters*                                  | `qG7GN5MYA/D4NjzNrvy1KoBgxfA=` |
 | edo  | Encrypted data (base64)                                | ...                            |
 | eko  | Encrypted key (base64)                                 | ...                            |
 | eao  | Signature of `encrypted_data + encrypted_key` (base64) | ...                            |
