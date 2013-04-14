@@ -332,9 +332,9 @@ Response:
 | Name                | Description              | Example  |
 | ---                 | ---                      | ---      |
 | userID              | SSN (YYYYMMDDXXXXX)      | You wish |
-| serverChallenge     | ??                       |          |
+| serverChallenge     | 20 random bytes          |          |
 | pkcs7               | Some kind of certificate |          |
-| bssChannel          | base64 encoded data      |          |
+| bssChannel          | Some kind of data        |          |
 | bssChannelSignature | Some kind of signature   |          |
 
 ### verifyAuth
