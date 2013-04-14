@@ -177,5 +177,48 @@ Response:
 | ab   | Some sort of JavaScript? blacklist |               |
 | dm   | X509-encoded certificate (base64)  |               |
 
-The certificate contains the public key to the merhcant's server.
+The certificate contains the public key to the merchant's server.
+
+## Merchant communication
+
+The URL for the merchant server can be found as `URL` in the *parameters*. You
+must first call `GetMerchantKey` to the central server to extract the
+merchant's public key.
+
+Requests are POSTed to this URL using the following envelope.
+
+### Envelope
+
+Encoding: form-data.
+
+Request:
+
+| Name      | Description                                            | Example    |
+| ---       | ---                                                    | ---        |
+| operation |                                                        | `initAuth` |
+| encData   | Encrypted request data (base64)                        | ...        |
+| encKey    | Encrypted request key (base64)                         | ...        |
+| encAuth   | Signature of `encrypted_data + encrypted_key` (base64) | ...        |
+
+Response:
+
+TODO
+
+### initAuth
+
+Encoding: form-data.
+
+Request:
+
+| Name            | Description                   | Example                        |
+| ---             | ---                           | ---                            |
+| operation       | Name of the operation         | `initAuth`                     |
+| clientChallenge | 20 random bytes (base64)      | `hvvsjVgvo6ULUSW3ic2DDBPZ0uk=` |
+| carrier         | `carrier` from the parameters | `NC`                           |
+| tokenType       | `token` from the parameters   | `roaming`                      |
+| clientIp        | IP address of the client      | `80.80.80.80`                  |
+
+Response:
+
+TODO
 
