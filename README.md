@@ -193,16 +193,22 @@ Encoding: form-data.
 
 Request:
 
-| Name      | Description                                            | Example    |
-| ---       | ---                                                    | ---        |
-| operation |                                                        | `initAuth` |
-| encData   | Encrypted request data (base64)                        | ...        |
-| encKey    | Encrypted request key (base64)                         | ...        |
-| encAuth   | Signature of `encrypted_data + encrypted_key` (base64) | ...        |
+| Name      | Description                                          | Example    |
+| ---       | ---                                                  | ---        |
+| operation |                                                      | `initAuth` |
+| encData   | Encrypted request data (base64)                      | ...        |
+| encKey    | Encrypted request key (base64)                       | ...        |
+| encAuth   | Signature of `operation + encData + encKey` (base64) | ...        |
+
+Note that (as opposed to the central envelope) the encrypted data and key is
+encoded in base64 when the signature is computed.
 
 Response:
 
-TODO
+| Name    | Description                      | Example |
+| ---     | ---                              | ---     |
+| encData | Encrypted response data (base64) | ...     |
+| encAuth | Signature of `encData` (base64)  | ...     |
 
 ### initAuth
 
