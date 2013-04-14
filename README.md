@@ -256,8 +256,8 @@ Response:
 | ay   | OrderIDRandom                            | `PCemJPUZXFMAHLYPkXorst9MBcg=`            |
 | ai   | Force USP Change flag (`N` or `Y`)       | `N`                                       |
 | at   | Force USP Change Renew flag (`N` or `Y`) | `N`                                       |
-| ap   | Timestamp                                | `20130409185726`                          |
-| am   | Timestamp                                | `20101015160936`                          |
+| ap   | Last login timestamp                     | `20130409185726`                          |
+| am   | First login timestamp                    | `20101015160936`                          |
 | dl   | Merchant name                            | `DNB Bank`                                |
 | dk   | Merchant title                           | `Postbanken - en del av DnB NOR Bank ASA` |
 | dp   | EndUserCertificate (X509, base64)        |                                           |
