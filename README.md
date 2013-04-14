@@ -226,5 +226,11 @@ Request:
 
 Response:
 
-TODO
+| Name                | Description              | Example  |
+| ---                 | ---                      | ---      |
+| userID              | SSN (YYYYMMDDXXXXX)      | You wish |
+| serverChallenge     | ??                       |          |
+| pkcs7               | Some kind of certificate |          |
+| bssChannel          | base64 encoded data      |          |
+| bssChannelSignature | Some kind of signature   |          |
 
