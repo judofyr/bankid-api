@@ -337,3 +337,14 @@ Response:
 | bssChannel          | base64 encoded data      |          |
 | bssChannelSignature | Some kind of signature   |          |
 
+### verifyAuth
+
+Request:
+
+| Name      | Description           | Example    |
+| ---       | ---                   | ---        |
+| operation | Name of the operation | `initAuth` |
+| carrier   | Constant              | `NC`       |
+| pkcs7     | `pkcs7` from initAuth |            |
+| traceId   | A trace ID?           |            |
+
