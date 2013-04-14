@@ -179,6 +179,46 @@ Response:
 
 The certificate contains the public key to the merchant's server.
 
+### GetUserInfo
+
+Request:
+
+| Name | Description           | Example       |
+| ---  | ---                   | ---           |
+| xx   | Constant              | `3.7`         |
+| tf   | Constant              | `5.3.2`       |
+| ao   | Constant              | `java`        |
+| bh   | Constant              | `GetUserInfo` |
+| bq   | User ID (SSN)         |               |
+| ar   | Merchant name         | `DNB Bank`    |
+| cg   | Either `PER` or `EMP` | `PER`         |
+| cf   | Constant              | `NC`          |
+
+Note that merchant name (`ar`) is the common name extracted from the
+certificate from GetMerchantKey.
+
+Response:
+
+| Name  | Description                            | Example |
+| ---   | ---                                    | ---     |
+| bn    | Error code. `0` = success              | `0`     |
+| au    | Number of OTP services                 | `1`     |
+| be1 - | Form-data encoded list of OTP services |         |
+
+GetUserInfo returns a list of OTP services. `au` contains the size of the list
+and each element is stored as `be1`, `be2` ... `beX` (where `X = au - 1`).
+
+Each element is form-data encoded:
+
+OTP service:
+
+| Name | Description    | Example               |
+| ---  | ---            | ---                   |
+| bd   | Name           | `Postbanken Digipass` |
+| br   | Issuer?        | `DNB`                 |
+| bc   | Unknown        | `0`                   |
+| bs   | `PER` or `EMP` | `PER`                 |
+
 ## Merchant communication
 
 The URL for the merchant server can be found as `URL` in the *parameters*. You
