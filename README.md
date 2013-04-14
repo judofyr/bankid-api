@@ -126,13 +126,24 @@ Requests are POSTed to this URL using the following envelope.
 
 Encoding: form-data.
 
+Request:
+
 | Name | Description                                            | Example                        |
 | ---  | ---                                                    | ---                            |
 | bu   | Constant                                               | `3.7`                          |
 | tf   | Constant                                               | `5.3.2`                        |
 | ao   | Constant                                               | `java`                         |
 | bt   | `tid` in *parameters*                                  | `qG7GN5MYA/D4NjzNrvy1KoBgxfA=` |
-| edo  | Encrypted data (base64)                                | ...                            |
-| eko  | Encrypted key (base64)                                 | ...                            |
+| edo  | Encrypted request data (base64)                        | ...                            |
+| eko  | Encrypted request key (base64)                         | ...                            |
 | eao  | Signature of `encrypted_data + encrypted_key` (base64) | ...                            |
+
+Response:
+
+| Name      | Description                            | Example |
+| ---       | ---                                    | ---     |
+| ErrorCode | Only present if there's an error       | `1412`  |
+| edo       | Encrypted response data (base64)       | ...     |
+| eao       | Signature of `encrypted_data` (base64) | ...     |
+
 
