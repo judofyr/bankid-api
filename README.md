@@ -62,7 +62,7 @@ env = {
 body = encode(env)
 ```
 
-Yes, the protocol full of 2-letter key names. And the keys are different when
+Yes, the protocol is full of 2-letter key names. And the keys are different when
 talking to the merchant's server (as opposed to the central server).
 
 ## Crypto
